@@ -41,12 +41,22 @@ my-copilot/
 
 ### 📦 core
 
-Essential skills and agents for everyday development.
+Essential cross-project tools.
 
 | Type | Name | Description |
 |------|------|-------------|
-| 🤖 Agent | [senior-dev](./plugins/core/agents/senior-dev.agent.md) | Autonomous senior developer agent |
+| 🤖 Agent | [helper](./plugins/core/agents/helper.agent.md) | Marketplace guide — find the right tool |
 | 🛠️ Skill | [add-tests](./plugins/core/skills/add-tests/SKILL.md) | Generate unit tests for a file |
+| 🛠️ Skill | [help](./plugins/core/skills/help/SKILL.md) | Quick cheatsheet — agents, skills, CLI commands |
+
+### 📦 frontend
+
+Frontend development — UI, React, TypeScript, accessibility, performance.
+
+| Type | Name | Description |
+|------|------|-------------|
+| 🤖 Agent | [frontend-dev](./plugins/frontend/agents/frontend-dev.agent.md) | Build UI components and features |
+| 🤖 Agent | [frontend-reviewer](./plugins/frontend/agents/frontend-reviewer.agent.md) | Review frontend code (a11y, perf, patterns, bugs) |
 
 ## For VSCode / Copilot Chat
 

@@ -1,0 +1,20 @@
+{
+  "name": "frontend",
+  "description": "Frontend development — UI components, React, TypeScript, accessibility, and performance.",
+  "version": "1.0.0",
+  "author": {
+    "name": "AntoninCoquet"
+  },
+  "repository": "https://github.com/AntoninCoquet/my-copilot",
+  "license": "MIT",
+  "keywords": [
+    "github-copilot",
+    "frontend",
+    "react",
+    "typescript",
+    "accessibility"
+  ],
+  "agents": [
+    "./agents"
+  ]
+}
