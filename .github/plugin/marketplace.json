@@ -1,0 +1,20 @@
+{
+  "name": "my-copilot",
+  "metadata": {
+    "description": "My personal GitHub Copilot plugin marketplace",
+    "version": "1.0.0",
+    "pluginRoot": "./plugins"
+  },
+  "owner": {
+    "name": "acoquet",
+    "email": ""
+  },
+  "plugins": [
+    {
+      "name": "core",
+      "source": "core",
+      "description": "Essential skills and agents for everyday development — unit test generation, autonomous senior developer.",
+      "version": "1.0.0"
+    }
+  ]
+}

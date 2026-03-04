@@ -1,83 +1,72 @@
 # 🤖 my-copilot
 
-Ma marketplace personnelle de plugins GitHub Copilot — agents, skills, instructions et prompts que j'utilise et fais évoluer selon mes projets.
+My personal GitHub Copilot plugin marketplace — agents, skills, instructions, and prompts that I use and evolve across my projects.
 
-## Structure du repo
+## Repository structure
 
 ```
 my-copilot/
-├── agents/                    # Custom agents (.agent.md)
-├── instructions/              # Instructions Copilot (.instructions.md)
-├── prompts/                   # Prompts réutilisables (.prompt.md)
-├── skills/                    # Skills Copilot (dossier + SKILL.md)
-│   └── <skill-name>/
-│       └── SKILL.md
-└── .github/
-    └── copilot-instructions.md  # Instructions globales du repo
+├── .github/
+│   ├── copilot-instructions.md          # Global repo instructions
+│   └── plugin/
+│       └── marketplace.json             # 📦 Marketplace registry
+├── instructions/                        # For VSCode/Copilot Chat (.instructions.md)
+├── prompts/                             # For VSCode/Copilot Chat (.prompt.md)
+└── plugins/                             # Installable plugins via Copilot CLI
+    └── <plugin-name>/
+        ├── .github/plugin/plugin.json   # Plugin manifest
+        ├── agents/                      # Custom agents (.agent.md)
+        └── skills/                      # Skills (folder + SKILL.md)
+            └── <skill-name>/
+                └── SKILL.md
 ```
 
-## Comment utiliser ces plugins
-
-### Dans GitHub Copilot (VSCode / GitHub.com)
-
-| Type | Emplacement cible | Déclencheur |
-|------|-------------------|-------------|
-| **Instructions** | `.github/instructions/` du projet cible | Automatique selon `applyTo` |
-| **Prompts** | `.github/prompts/` du projet cible | `/nom-du-prompt` dans le chat |
-| **Agents** | `.github/agents/` du projet cible (ou global) | `@nom-agent` dans le chat |
-| **Skills** | Référencé dans la config Copilot CLI | Invoqué par le CLI |
-
-### Copier un plugin dans un projet
+## Installation via Copilot CLI
 
 ```bash
-# Copier une instruction
-cp instructions/mon-instruction.instructions.md ../mon-projet/.github/instructions/
+# 1. Register this repo as a marketplace source
+/plugin marketplace add acoquet/my-copilot
 
-# Copier un prompt
-cp prompts/mon-prompt.prompt.md ../mon-projet/.github/prompts/
+# 2. List available plugins
+/plugin list
 
-# Copier un agent
-cp agents/mon-agent.agent.md ../mon-projet/.github/agents/
+# 3. Install a plugin
+/plugin install core
+
+# 4. Update a plugin
+/plugin update core
 ```
 
-## Conventions de nommage
+## Available plugins
 
-- **Instructions** : `<sujet>.instructions.md` (ex: `typescript.instructions.md`)
-- **Prompts** : `<action>.prompt.md` (ex: `code-review.prompt.md`)
-- **Agents** : `<nom>.agent.md` (ex: `senior-dev.agent.md`)
-- **Skills** : dossier `<skill-name>/SKILL.md` (ex: `add-tests/SKILL.md`)
+### 📦 core
 
-## Catalogue
+Essential skills and agents for everyday development.
 
-### 🎯 Instructions
+| Type | Name | Description |
+|------|------|-------------|
+| 🤖 Agent | [senior-dev](./plugins/core/agents/senior-dev.agent.md) | Autonomous senior developer agent |
+| 🛠️ Skill | [add-tests](./plugins/core/skills/add-tests/SKILL.md) | Generate unit tests for a file |
 
-| Nom | Description | `applyTo` |
-|-----|-------------|-----------|
-| [example](./instructions/example.instructions.md) | Instruction d'exemple | `**` |
+## For VSCode / Copilot Chat
 
-### 💬 Prompts
+The `instructions/` and `prompts/` files are meant to be copied into the `.github/` folder of the target project.
 
-| Nom | Description |
-|-----|-------------|
-| [code-review](./prompts/code-review.prompt.md) | Revue de code structurée |
+| Type | Target location | Trigger |
+|------|-----------------|---------|
+| **Instructions** | `.github/instructions/` | Automatic based on `applyTo` |
+| **Prompts** | `.github/prompts/` | `/prompt-name` in chat |
 
-### 🤖 Agents
+## Adding a new plugin
 
-| Nom | Modèle | Description |
-|-----|--------|-------------|
-| [senior-dev](./agents/senior-dev.agent.md) | Claude Sonnet | Agent développeur senior autonome |
+1. Create `plugins/<name>/` with its structure
+2. Add `plugins/<name>/.github/plugin/plugin.json`
+3. Register the plugin in `.github/plugin/marketplace.json`
+4. Document it in this README (table above)
 
-### 🛠️ Skills
+## Conventions
 
-| Nom | Description |
-|-----|-------------|
-| [add-tests](./skills/add-tests/SKILL.md) | Génère des tests unitaires pour un fichier |
-
-## Contribuer / Évoluer
-
-Ce repo est personnel et évolue selon mes besoins. Pour ajouter un plugin :
-
-1. Respecter les conventions de nommage ci-dessus
-2. Toujours inclure le frontmatter YAML requis
-3. Documenter le plugin dans ce README (tableau Catalogue)
-4. Tester le plugin sur un projet réel avant de committer
+- **Agents**: `<name>.agent.md` — frontmatter: `name`, `description`, `model`
+- **Skills**: folder `<skill-name>/SKILL.md` — frontmatter: `name`, `description`
+- **Instructions**: `<subject>.instructions.md` — frontmatter: `applyTo`
+- **Prompts**: `<action>.prompt.md` — frontmatter: `mode`, `description`

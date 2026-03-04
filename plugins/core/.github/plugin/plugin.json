@@ -1,0 +1,21 @@
+{
+  "name": "core",
+  "description": "Essential skills and agents for everyday development.",
+  "version": "1.0.0",
+  "author": {
+    "name": "acoquet"
+  },
+  "repository": "https://github.com/acoquet/my-copilot",
+  "license": "MIT",
+  "keywords": [
+    "github-copilot",
+    "testing",
+    "agents"
+  ],
+  "agents": [
+    "./agents"
+  ],
+  "skills": [
+    "./skills/add-tests"
+  ]
+}

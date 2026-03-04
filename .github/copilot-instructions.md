@@ -1,19 +1,21 @@
-# Instructions globales — my-copilot
+# Global instructions — my-copilot
 
-Ce repo contient mes plugins GitHub Copilot personnels (agents, skills, instructions, prompts).
+This repository contains my personal GitHub Copilot plugins (agents, skills, instructions, prompts).
 
-## Conventions générales
+## General conventions
 
-- Toujours inclure le frontmatter YAML requis pour chaque type de plugin
-- Les fichiers d'instructions utilisent `applyTo` pour cibler des fichiers spécifiques
-- Garder les plugins concis, ciblés et réutilisables
-- Documenter chaque plugin dans le README.md principal (tableau Catalogue)
+- Always include the required YAML frontmatter for each plugin type
+- Instruction files use `applyTo` to target specific files
+- Keep plugins concise, focused, and reusable
+- Document each plugin in the main README.md (catalog table)
 
-## Structure attendue
+## Expected structure
 
 ```
-agents/          → *.agent.md
-instructions/    → *.instructions.md
-prompts/         → *.prompt.md
-skills/<name>/   → SKILL.md
+plugins/<name>/    → installable CLI plugins
+  .github/plugin/plugin.json
+  agents/          → *.agent.md
+  skills/<name>/   → SKILL.md
+instructions/      → *.instructions.md  (VSCode/Chat)
+prompts/           → *.prompt.md        (VSCode/Chat)
 ```

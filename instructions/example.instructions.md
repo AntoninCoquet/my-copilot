@@ -1,30 +1,30 @@
 ---
-description: "Instruction d'exemple — à remplacer par vos propres règles"
+description: "Example instruction — replace with your own rules"
 applyTo: "**"
 ---
 
-# Exemple d'instruction Copilot
+# Example Copilot Instruction
 
-Ceci est un exemple d'instruction Copilot. Remplacez ce contenu par vos propres règles.
+This is an example Copilot instruction file. Replace this content with your own rules.
 
-## Ce que fait cette instruction
+## What this instruction does
 
-- Elle s'applique à tous les fichiers (`applyTo: "**"`)
-- Elle guide le comportement de Copilot sur ce projet
+- Applies to all files (`applyTo: "**"`)
+- Guides Copilot's behavior across the project
 
-## Bonnes pratiques
+## Best practices
 
-- Soyez précis sur le contexte et les contraintes
-- Définissez le style de code attendu
-- Précisez les frameworks et librairies utilisés
-- Listez les anti-patterns à éviter
+- Be specific about context and constraints
+- Define the expected code style
+- Specify the frameworks and libraries in use
+- List anti-patterns to avoid
 
-## Exemple de contenu utile
+## Example useful content
 
 ```
-- Utiliser TypeScript strict mode
-- Préférer les fonctions pures
-- Toujours écrire des tests unitaires
-- Nommer les variables en anglais
-- Commenter en français
+- Use TypeScript strict mode
+- Prefer pure functions
+- Always write unit tests
+- Name variables in English
+- Use descriptive commit messages following Conventional Commits
 ```

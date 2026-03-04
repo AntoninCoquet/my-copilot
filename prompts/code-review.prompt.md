@@ -1,47 +1,47 @@
 ---
 mode: agent
-description: "Effectue une revue de code structurée et actionnable sur le code sélectionné ou les fichiers modifiés."
+description: "Perform a structured, actionable code review on the selected code or modified files."
 ---
 
-# Revue de code
+# Code Review
 
-Effectue une revue de code complète et structurée. Analyse le code fourni en contexte (fichiers ouverts, sélection, ou diff Git).
+Perform a complete and structured code review. Analyze the code provided in context (open files, selection, or Git diff).
 
-## Ce que tu dois vérifier
+## What to check
 
-### 🐛 Bugs & logique
-- Identifier les bugs évidents ou les cas limites non gérés
-- Vérifier la gestion des erreurs et des cas d'échec
-- Détecter les conditions de course ou problèmes d'état
+### 🐛 Bugs & logic
+- Identify obvious bugs or unhandled edge cases
+- Check error handling and failure paths
+- Detect race conditions or state issues
 
-### 🔒 Sécurité
-- Injection SQL, XSS, CSRF et autres vulnérabilités courantes
-- Secrets ou données sensibles exposés dans le code
-- Validation insuffisante des entrées utilisateur
+### 🔒 Security
+- SQL injection, XSS, CSRF and other common vulnerabilities
+- Secrets or sensitive data exposed in code
+- Insufficient user input validation
 
 ### ⚡ Performance
-- Requêtes N+1 ou boucles coûteuses
-- Allocations mémoire inutiles
-- Opérations bloquantes dans des contextes async
+- N+1 queries or expensive loops
+- Unnecessary memory allocations
+- Blocking operations in async contexts
 
-### 🏗️ Architecture & maintenabilité
-- Respect des principes SOLID
-- Duplication de code (DRY)
-- Nommage clair et expressif
+### 🏗️ Architecture & maintainability
+- SOLID principles adherence
+- Code duplication (DRY)
+- Clear and expressive naming
 
 ### ✅ Tests
-- Couverture des cas nominaux et des cas limites
-- Tests fragiles ou trop couplés à l'implémentation
+- Coverage of happy path and edge cases
+- Brittle tests or over-coupling to implementation details
 
-## Format de réponse
+## Response format
 
-Pour chaque problème identifié :
+For each issue found:
 
-**[SÉVÉRITÉ]** — `fichier:ligne` — Description courte
-> Explication du problème et suggestion de correction
+**[SEVERITY]** — `file:line` — Short description
+> Explanation of the problem and suggested fix
 
-Niveaux de sévérité : `🔴 CRITIQUE` | `🟠 MAJEUR` | `🟡 MINEUR` | `🔵 SUGGESTION`
+Severity levels: `🔴 CRITICAL` | `🟠 MAJOR` | `🟡 MINOR` | `🔵 SUGGESTION`
 
 ---
 
-Si le code est bon, indique-le explicitement : "✅ Aucun problème majeur identifié."
+If the code is good, state it explicitly: "✅ No major issues found."
