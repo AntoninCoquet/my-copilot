@@ -1,6 +1,6 @@
 {
   "name": "core",
-  "description": "Essential cross-project tools — unit test generation, help cheatsheet, and marketplace guide.",
+  "description": "Essential cross-project tools, help cheatsheet, and marketplace guide.",
   "version": "1.1.0",
   "author": {
     "name": "AntoninCoquet"
@@ -9,14 +9,12 @@
   "license": "MIT",
   "keywords": [
     "github-copilot",
-    "testing",
     "helper"
   ],
   "agents": [
     "./agents"
   ],
   "skills": [
-    "./skills/add-tests",
     "./skills/help"
   ]
 }

@@ -19,7 +19,6 @@ Invoke an agent: `/agent` → select from the list
 
 | Plugin | Skill | Invoke |
 |--------|-------|--------|
-| `core` | `add-tests` | `/add-tests #file:path/to/file` |
 | `core` | `help` | `/help` |
 
 ## VSCode / Copilot Chat

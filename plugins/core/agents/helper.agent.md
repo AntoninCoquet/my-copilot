@@ -28,7 +28,6 @@ plugins/
 
 | Plugin | Skill | Invoke with |
 |--------|-------|-------------|
-| `core` | `add-tests` | `/add-tests` |
 | `core` | `help` | `/help` |
 
 ### VSCode / Copilot Chat extras

@@ -46,7 +46,6 @@ Essential cross-project tools.
 | Type | Name | Description |
 |------|------|-------------|
 | 🤖 Agent | [helper](./plugins/core/agents/helper.agent.md) | Marketplace guide — find the right tool |
-| 🛠️ Skill | [add-tests](./plugins/core/skills/add-tests/SKILL.md) | Generate unit tests for a file |
 | 🛠️ Skill | [help](./plugins/core/skills/help/SKILL.md) | Quick cheatsheet — agents, skills, CLI commands |
 
 ### 📦 frontend
